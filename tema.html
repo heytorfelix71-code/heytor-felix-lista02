@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>tema.html</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  padding: 40px;
+}
+button {
+  padding: 6px 14px;
+}
+</style>
+</head>
+<body>
+
+<h1>tema.html</h1>
+
+<h2>Modo Claro/Escuro</h2>
+<button onclick="mudarTema()">Mudar Tema</button>
+
+<script>
+function mudarTema() {
+  var body = document.body;
+  if (body.style.backgroundColor === "black") {
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
+  } else {
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+  }
+}
+</script>
+
+</body>
+</html>
