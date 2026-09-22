@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>tabuada.html</title>
+</head>
+<body>
+
+<h1>tabuada.html</h1>
+
+<p>Escreva um número e veja a tabuada dele</p>
+
+<input type="number" id="numero" value="5" oninput="gerar()">
+
+<div id="resultado"></div>
+
+<script>
+function gerar() {
+  var numero = document.getElementById("numero").value;
+  var html = "<p>Tabuada do número: " + numero + "</p>";
+
+  for (var i = 0; i <= 10; i++) {
+    html += "<p>" + (numero * i) + "</p>";
+  }
+
+  document.getElementById("resultado").innerHTML = html;
+}
+
+gerar();
+</script>
+
+</body>
+</html>
