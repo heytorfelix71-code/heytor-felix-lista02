@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>contador.html</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+button {
+  padding: 8px 16px;
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>contador.html</h1>
+
+<h2>Contador de Cliques</h2>
+
+<button onclick="somar()">Clique aqui!</button>
+<button onclick="zerar()">Zerar contador</button>
+
+<p>Cliques: <span id="cliques">0</span></p>
+
+<script>
+var cliques = 0;
+
+function somar() {
+  cliques++;
+  document.getElementById("cliques").textContent = cliques;
+}
+
+function zerar() {
+  cliques = 0;
+  document.getElementById("cliques").textContent = cliques;
+}
+</script>
+
+</body>
+</html>
