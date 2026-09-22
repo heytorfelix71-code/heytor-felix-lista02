@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>presenca.html</title>
+<style>
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+#confirmar {
+  background-color: #2e9e4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+label {
+  display: block;
+  text-align: left;
+  width: 150px;
+  margin: 0 auto;
+}
+.presente {
+  color: green;
+  font-weight: bold;
+}
+.ausente {
+  color: red;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>presenca.html</h1>
+
+<div id="alunos">
+  <label><input type="checkbox" class="chk" value="João" checked> João</label>
+  <label><input type="checkbox" class="chk" value="Márcio" checked> Márcio</label>
+  <label><input type="checkbox" class="chk" value="Fabiana"> Fabiana</label>
+  <label><input type="checkbox" class="chk" value="Jorge"> Jorge</label>
+  <label><input type="checkbox" class="chk" value="Silvana"> Silvana</label>
+  <label><input type="checkbox" class="chk" value="Luiz" checked> Luiz</label>
+  <label><input type="checkbox" class="chk" value="Carlos" checked> Carlos</label>
+  <label><input type="checkbox" class="chk" value="Pablo" checked> Pablo</label>
+</div>
+
+<button id="confirmar" onclick="confirmar()">Confirmar Presença</button>
+
+<h2>Resultado</h2>
+<p id="presentes"></p>
+<p id="ausentes"></p>
+
+<script>
+function confirmar() {
+  var checkboxes = document.getElementsByClassName("chk");
+  var presentes = [];
+  var ausentes = [];
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      presentes.push("<span class='presente'>" + checkboxes[i].value + "</span>");
+    } else {
+      ausentes.push("<span class='ausente'>" + checkboxes[i].value + "</span>");
+    }
+  }
+
+  document.getElementById("presentes").innerHTML = "<b>Presentes:</b> " + presentes.join(", ");
+  document.getElementById("ausentes").innerHTML = "<b>Ausentes:</b> " + ausentes.join(", ");
+}
+</script>
+
+</body>
+</html>
